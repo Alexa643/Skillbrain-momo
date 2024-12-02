@@ -1,13 +1,10 @@
-
 import './App.css';
 import TaskViewer from './components/TaskViewer';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
+    <div className="app">
       <TaskViewer></TaskViewer>
     </div>
   );
 }
-
-export default App;

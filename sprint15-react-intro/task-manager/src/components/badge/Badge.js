@@ -3,7 +3,7 @@ import "./Badge.css";
 function Badge(props) {
     return (
         <div className="badge">
-            <p>{props.status}</p>
+            <p>{props.label}</p>
         </div>
     );
 }

@@ -6,7 +6,7 @@ export default function TaskViewer() {
         {
             id: "T-1",
             name: "Create a Design System for Enum Workspace.",
-            status: "Todo",
+            status: "Done",
             dueDate: new Date(2022, 5, 23),
         },
         {

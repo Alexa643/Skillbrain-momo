@@ -1,12 +1,18 @@
 import "./DateContainer.css";
 
-function DateContainer(props) {
+function getDateFormat(date) {
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = date.getFullYear();
+
+    return `${day}-${month}-${year}`;
+}
+
+export default function DateContainer(props) {
     return (
         <div className="due-date">
             <p>Due Date</p>
-            <p>{props.date.toLocaleDateString()}</p>
+            <p>{getDateFormat(props.date)}</p>
         </div>
     );
 }
-
-export default DateContainer;

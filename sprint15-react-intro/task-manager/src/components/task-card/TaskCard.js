@@ -7,7 +7,7 @@ function TaskCard(props) {
         <div className="card-wrapper">
             <div className="card-header">
                 <p className="task-id">{props.id}</p>
-                <Badge status={props.status} />
+                <Badge label={props.status} />
             </div>
             <div className="card-content">
                 <p>{props.name}</p>
