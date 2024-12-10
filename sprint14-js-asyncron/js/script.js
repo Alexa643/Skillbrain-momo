@@ -1,82 +1,103 @@
-// Centralized JavaScript file to load and populate data for all pages
+const data = {
+    home: {
+        background: "./assets/home/background-home-desktop.jpg",
+        description: "Let’s face it; if you want to go to space, you might as well genuinely go to outer space and not hover kind of on the edge of it. Well sit back, and relax because we’ll give you a truly out of this world experience!",
+    },
+    destinations: [
+        {
+            name: "Moon",
+            images: {
+                png: "./assets/destination/image-moon.png",
+            },
+            description: "See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.",
+            distance: "384,400 km",
+            travel: "3 days",
+        },
+        {
+            name: "Mars",
+            images: {
+                png: "./assets/destination/image-mars.png",
+            },
+            description: "Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, the tallest planetary mountain in our solar system.",
+            distance: "225 mil. km",
+            travel: "9 months",
+        },
+        // Other destinations...
+    ],
+    crew: [
+        {
+            name: "Douglas Hurley",
+            images: {
+                png: "./assets/crew/image-douglas-hurley.png",
+            },
+            role: "Commander",
+            bio: "Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut.",
+        },
+        // Other crew members...
+    ],
+    technology: [
+        {
+            name: "Launch vehicle",
+            images: {
+                png: "./assets/technology/image-launch-vehicle-portrait.jpg",
+            },
+            description: "A launch vehicle is a rocket-propelled vehicle used to carry a payload from Earth's surface to space.",
+        },
+        // Other technologies...
+    ],
+};
 
-document.addEventListener('DOMContentLoaded', () => {
-    fetch('../data/data.json')
-        .then(response => response.json())
-        .then(data => {
-            // Detect the current page based on the URL
-            const path = window.location.pathname;
+// Load Home Section
+const homeDescription = document.querySelector("#home-description");
+homeDescription.textContent = data.home.description;
 
-            if (path.includes('crew.html')) {
-                loadCrew(data.crew);
-            } else if (path.includes('technology.html')) {
-                loadTechnology(data.technology);
-            } else if (path.includes('destination.html')) {
-                loadDestinations(data.destinations);
-            }
-        })
-        .catch(error => console.error('Error loading data:', error));
+// Load Destinations Section
+const destinationContainer = document.querySelector("#destination-container");
+data.destinations.forEach((destination) => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+
+    // Calea corectă pentru imagini
+    const imgSrc = destination.images.png.startsWith("./")
+        ? destination.images.png.replace("./", "")
+        : destination.images.png;
+
+    card.innerHTML = `
+    <img src="${imgSrc}" alt="${destination.name}">
+    <h3>${destination.name}</h3>
+    <p>${destination.description}</p>
+    <p><strong>Distance:</strong> ${destination.distance}</p>
+    <p><strong>Travel Time:</strong> ${destination.travel}</p>
+  `;
+    destinationContainer.appendChild(card);
 });
 
-// Function to load crew members
-function loadCrew(crew) {
-    const crewSection = document.getElementById('crew-list');
-    crew.forEach(member => {
-        const article = document.createElement('article');
-        article.classList.add('crew-member');
 
-        article.innerHTML = `
-        <img src="${member.images.webp}" alt="${member.name}">
-        <h2>${member.role}</h2>
-        <p class="name">${member.name}</p>
-        <p class="bio">${member.bio}</p>
-      `;
-
-        crewSection.appendChild(article);
-    });
-}
-
-// Function to load technology items
-function loadTechnology(technology) {
-    const technologySection = document.getElementById('technology-list');
-    technology.forEach(item => {
-        const article = document.createElement('article');
-        article.classList.add('technology-item');
-
-        article.innerHTML = `
-        <img src="${item.images.portrait}" alt="${item.name}">
-        <d0iv>
-          <h2>${item.name}</h2>
-          <p>${item.description}</p>
-        </div>
-      `;
-
-        technologySection.appendChild(article);
-    });
-}
-
-// Function to load destination items
-function loadDestinations(destinations) {
-    const destinationSection = document.getElementById('destination-list');
-    destinations.forEach(destination => {
-        const article = document.createElement('article');
-        article.classList.add('destination-item');
-
-        article.innerHTML = `
-        <img src="${destination.images.webp}" alt="${destination.name}">
-        <h2>${destination.name}</h2>
-        <p class="description">${destination.description}</p>
-        <p class="distance">Distance: ${destination.distance}</p>
-        <p class="travel">Travel time: ${destination.travel}</p>
-      `;
-
-        destinationSection.appendChild(article);
-    });
-}
-
-// script.js
-document.addEventListener("DOMContentLoaded", function () {
-    console.log("Page Loaded!");
-    // Poți adăuga aici alte funcționalități de JavaScript
+// Load Crew Section
+const crewContainer = document.querySelector("#crew-container");
+data.crew.forEach((crew) => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+    card.innerHTML = `
+      <img src="${crew.images.png}" alt="${crew.name}">
+      <h3>${crew.name}</h3>
+      <p><strong>Role:</strong> ${crew.role}</p>
+      <p>${crew.bio}</p>
+    `;
+    crewContainer.appendChild(card);
 });
+
+// Load Technology Section
+const technologyContainer = document.querySelector("#technology-container");
+data.technology.forEach((tech) => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+    card.innerHTML = `
+      <img src="${tech.images.png}" alt="${tech.name}">
+      <h3>${tech.name}</h3>
+      <p>${tech.description}</p>
+    `;
+    technologyContainer.appendChild(card);
+});
+
 
