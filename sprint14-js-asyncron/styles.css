@@ -1,0 +1,355 @@
+/* Global styles */
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    color: #d0d6f9;
+    background: url(assets/home/background-home-desktop.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    color: #fcf9f9;
+}
+
+.header-img {
+    width: 48px;
+    height: 48px;
+    margin: 64px 0 0 50px;
+}
+
+.menu {
+    backdrop-filter: blur(81.5px);
+    background-color: rgba(255, 255, 255, 0.034);
+    width: 1180px;
+    height: 96px;
+    margin-top: 40px;
+}
+
+.header-button {
+    font-family: "Barlow Condensed", sans-serif;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    letter-spacing: 2.7px;
+    margin-top: 39px;
+    cursor: pointer;
+}
+
+/* Main container */
+.container {
+    margin: 0 165px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+h1 {
+    font-family: "Bellefair", serif;
+    font-size: 150px;
+    font-weight: 400;
+    margin: 0;
+}
+
+h2 {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: 4.72px;
+    line-height: 33.6px;
+    width: 400px;
+}
+
+p {
+    font-family: "Barlow", sans-serif;
+    font-size: 18px;
+    line-height: 32px;
+}
+
+.home-content {
+    width: 440px;
+}
+
+/* Explore button */
+.explore {
+    position: fixed;
+    bottom: 170px;
+    left: 70%;
+    transform: translateX(-50%);
+    width: 274px;
+    height: 274px;
+    border-radius: 50%;
+    font-family: "Bellefair", serif;
+    font-size: 32px;
+    line-height: 37px;
+    letter-spacing: 2px;
+    background-color: #ffffff;
+    color: #0b0d17;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.explore:hover {
+    background-color: rgb(226, 224, 224);
+    box-shadow: 0 0 70px rgba(243, 245, 243, 0.8);
+}
+
+/* Reusable utility classes */
+.ml120 {
+    margin-left: 120px;
+}
+
+.mg48 {
+    margin: 0 48px;
+}
+
+.mlr35 {
+    margin: 0 35px;
+}
+
+.mb38 {
+    margin-bottom: 38px;
+}
+
+.mb {
+    margin-bottom: 0;
+}
+
+.mt220 {
+    margin-top: 220px;
+}
+
+.mb20 {
+    margin-bottom: 20px;
+}
+
+.ml20 {
+    margin-left: 20px;
+}
+
+.mt-20 {
+    margin-top: -140px;
+}
+
+/* Destination section */
+#destination-section {
+    display: none;
+}
+
+.text {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 28px;
+    letter-spacing: 4.72px;
+    margin: 100px 0 70px 220px;
+}
+
+.grafix {
+    margin: 0 165px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+#destination-image {
+    width: 445px;
+    height: 445px;
+    object-fit: cover;
+}
+
+.information-planet {
+    width: 445px;
+    height: 472px;
+}
+
+#nameDestination {
+    font-family: "Bellefair", serif;
+    font-size: 100px;
+    line-height: 114.6px;
+}
+
+#description {
+    font-family: "Barlow", sans-serif;
+    font-size: 18px;
+    line-height: 32px;
+    width: 450px;
+    margin-bottom: 35px;
+}
+
+.distance {
+    display: flex;
+    justify-content: space-between;
+}
+
+.more-info {
+    font-family: "Bellefair", serif;
+    font-size: 28px;
+    line-height: 32.09px;
+}
+
+.extra {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 14px;
+    letter-spacing: 2.36px;
+}
+
+.planet {
+    background: none;
+    border: none;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 24px;
+    letter-spacing: 2.7px;
+    color: #d0d6f9;
+    cursor: pointer;
+    margin-right: 12px;
+}
+
+/* Crew section */
+#crew-section {
+    display: none;
+}
+
+.info-crew {
+    width: 444px;
+    margin: 100px auto 0 auto;
+    display: flex;
+}
+
+.crew-role {
+    font-family: "Bellefair", serif;
+    font-size: 32px;
+    font-weight: 300;
+    color: white;
+    opacity: 1;
+}
+
+.crew-name {
+    font-family: "Bellefair", serif;
+    font-size: 56px;
+    font-weight: 400;
+    line-height: 64.18px;
+}
+
+.crew-bio {
+    font-family: "Barlow", sans-serif;
+    font-size: 18px;
+    opacity: 1;
+}
+
+.crew-button {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* Technology section */
+#technology-section {
+    display: none;
+}
+
+.container-technology {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 80px auto;
+}
+
+.button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-techn {
+    width: 60%;
+    text-align: center;
+}
+
+#technology-name {
+    font-family: "Bellefair", serif;
+    font-size: 48px;
+    line-height: 56px;
+}
+
+#technology-description {
+    font-family: "Barlow", sans-serif;
+    font-size: 18px;
+    line-height: 32px;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .container {
+        margin: 0 50px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .home-content {
+        width: 100%;
+        text-align: center;
+    }
+
+    .explore {
+        width: 200px;
+        height: 200px;
+        bottom: 130px;
+    }
+
+    h1 {
+        font-size: 100px;
+    }
+
+    .grafix {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #destination-image,
+    #crew-image,
+    #technology-image {
+        width: 50%;
+        height: auto;
+    }
+
+    #nameDestination,
+    .crew-role,
+    .crew-name,
+    #technology-name {
+        font-size: 28px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-button {
+        font-size: 14px;
+        letter-spacing: 1.5px;
+    }
+
+    h1 {
+        font-size: 60px;
+    }
+
+    .home-content {
+        width: 90%;
+        text-align: center;
+    }
+
+    .explore {
+        width: 150px;
+        height: 150px;
+        bottom: 100px;
+    }
+
+    .distance {
+        flex-direction: column;
+    }
+}
