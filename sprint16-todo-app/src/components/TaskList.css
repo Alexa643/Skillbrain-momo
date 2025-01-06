@@ -1,0 +1,42 @@
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s;
+}
+
+.task-list li.completed span {
+    text-decoration: line-through;
+    color: #888;
+    cursor: pointer;
+}
+
+.task-list li span {
+    cursor: pointer;
+}
+
+.task-list li button {
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.task-list li button:hover {
+    background: darkred;
+}
+
+.task-list li:hover {
+    background-color: #f9f9f9;
+}
