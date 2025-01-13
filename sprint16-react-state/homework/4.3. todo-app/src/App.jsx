@@ -17,24 +17,36 @@ const TODOS_MOCK = [
   {
     id: "2",
     title: "Todo 2",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit!",
+    description: "Fac exercitii dimineata",
     completed: false,
   },
   {
     id: "3",
     title: "Todo 3",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit!",
+    description: "Maine merg la munca",
     completed: true,
   },
   {
     id: "4",
     title: "Todo 4",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit!",
-    completed: true,
+    description: "Reactul este usor",
+    completed: false,
+  },
+  {
+    id: "5",
+    title: "Todo 5",
+    description: "Alea iacta es",
+    completed: false,
   },
 ];
 
 function App() {
+  const [todos, setTodos] = React.useState(TODOS_MOCK);
+  const uncompletedTodos = todos.filter((todo) => !todo.completed);
+  const uncompletedTodosTags = uncompletedTodos.map(todo => <TodoItem key={todo.id} todo={todo} />);
+  const completedTodos = todos.filter((todo) => todo.completed);
+  const completedTodosTags = completedTodos.map(todo => <TodoItem key={todo.id} todo={todo} />);
+
   return (
     <div className="App">
       <div className="app-container">
@@ -44,8 +56,8 @@ function App() {
         <Card>
           <h2>Create Todo</h2>
           <form>
-            <Input onChange={() => {}} placeholder="Title" type="text" />
-            <TextArea onChange={() => {}} placeholder="Description" />
+            <Input onChange={() => { }} placeholder="Title" type="text" />
+            <TextArea onChange={() => { }} placeholder="Description" />
             <Button type="submit">Create</Button>
           </form>
         </Card>
@@ -57,16 +69,15 @@ function App() {
           <h1>My todos</h1>
           <Button onClick={() => console.log("Open Modal")}>Add +</Button>
           <div className="list-container">
-            <TodoItem completed={false} />
-            <TodoItem completed={false} />
+            {uncompletedTodosTags}
+
           </div>
 
           <div className="separator"></div>
 
           <h2>Completed</h2>
           <div className="list-container">
-            <TodoItem completed={true} />
-            <TodoItem completed={true} />
+            {completedTodosTags}
           </div>
         </Card>
       </div>
