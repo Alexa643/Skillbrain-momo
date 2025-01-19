@@ -1,22 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import "./TodoItem.css";
 import Checkbox from "../checkbox/CheckBox";
 
-const TodoItem = ({ todo }) => {
-  const handleCheckboxChange = (value) => {
-    console.log(value);
+const TodoItem = React.memo(({ todo, onToggleCompleted }) => {
+  const handleCheckboxChange = () => {
+    onToggleCompleted(todo.id);
   };
 
   return (
-    <div className={`todo-item ${todo.completed && "todo-completed"}`}>
+    <div className={`todo-item ${todo.completed ? "todo-completed" : ""}`}>
       <div className="todo-item-header">
         <div className="title-area">
           <Checkbox
             checked={todo.completed}
             onChange={handleCheckboxChange}
           />
-
-          <h4> {todo.title}</h4>
+          <h4>{todo.title}</h4>
         </div>
         <div>
           <i className="fa fa-pencil" aria-hidden="true"></i>
@@ -26,11 +25,14 @@ const TodoItem = ({ todo }) => {
 
       <div className="separator"></div>
 
-      <p>
-        {todo.description}
-      </p>
+      <p>{todo.description}</p>
     </div>
   );
-};
+});
 
 export default TodoItem;
+
+
+
+
+
