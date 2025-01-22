@@ -1,0 +1,19 @@
+{
+  "name": "sprint16-react-state",
+  "version": "1.0.0",
+  "description": "![alt text](/images/logo.png) ## 1. Cum lucrez cu repository-ul de github? <aside> 💡",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "react-scripts": "^5.0.1"
+  }
+}
